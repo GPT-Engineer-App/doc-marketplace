@@ -1,5 +1,6 @@
-import { Box, Button, Flex, Heading, Input, Stack, Text, Image, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Input, Stack, Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import { FaSearch, FaShoppingCart, FaUpload } from "react-icons/fa";
+import CategorySection from "./CategorySection";
 
 const Index = () => {
   const bg = useColorModeValue("gray.50", "gray.800");
@@ -29,17 +30,12 @@ const Index = () => {
       <Heading as="h2" size="lg" mb={5}>
         Featured Documents
       </Heading>
-      <Flex wrap="wrap" justifyContent="space-between">
-        {Array.from({ length: 4 }).map((_, index) => (
-          <Box key={index} p={5} shadow="md" borderWidth="1px" flex="1 1 45%" mb={5}>
-            <Heading size="md">Document Title {index + 1}</Heading>
-            <Text mt={4}>This is a brief description of the document. It covers the main points and highlights.</Text>
-            <Button mt={10} colorScheme="purple">
-              Buy Now
-            </Button>
-          </Box>
-        ))}
-      </Flex>
+      <VStack spacing={8}>
+        <CategorySection title="Business" documentCount={4} />
+        <CategorySection title="Education" documentCount={3} />
+        <CategorySection title="Technology" documentCount={2} />
+        <CategorySection title="Health" documentCount={3} />
+      </VStack>
     </Box>
   );
 };
