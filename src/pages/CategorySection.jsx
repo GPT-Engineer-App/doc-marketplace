@@ -8,7 +8,7 @@ const CategorySection = ({ title, documentCount }) => {
       </Heading>
       <Flex wrap="wrap" justifyContent="space-between">
         {Array.from({ length: documentCount }).map((_, index) => (
-          <Box key={index} p={5} shadow="md" borderWidth="1px" flex="1 1 45%" mb={5}>
+          <Box key={index} p={5} shadow="md" borderWidth="1px" flex="1 1 45%" mb={5} w="300px" h="350px">
             <Heading size="md">
               {title} Document {index + 1}
             </Heading>
